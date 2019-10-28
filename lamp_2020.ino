@@ -131,10 +131,14 @@ void crazyCircle() {
 int scenario = 0;
 
 void setup() {
-  pixels.setBrightness(80);
-
   randomSeed(analogRead(0));
   scenario = random(1, 6);
+
+  if (scenario == 6) {
+    pixels.setBrightness(80);
+  } else {
+    pixels.setBrightness(128);
+  }
 
   pixels.begin();
   pixels.show();
